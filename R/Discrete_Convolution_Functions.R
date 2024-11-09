@@ -26,6 +26,8 @@ plot_discrete <- function(discrete_vec, prob_vec){
   minimum = min(discrete_vec)
   num = ceiling(maximum / 10)
 
+  n = discrete_vec[1]
+  title_text <- paste0("Sum of ", n, " Independent Discrete Variables")
 
   upper = 2 * max(prob_vec)
   data <- data.frame(x = discrete_vec, y = prob_vec)
@@ -33,8 +35,8 @@ plot_discrete <- function(discrete_vec, prob_vec){
   plot <- ggplot(data, aes(x = factor(x), y = y)) +  # Convert x to a factor to ensure discrete x-axis
     geom_bar(stat = "identity", fill = "skyblue", color = "black") +  # Bar plot
     scale_x_discrete(breaks = seq(minimum, maximum, by = num)) +
-    labs(title = "Bar Plot of Discrete Values and Probabilities",
-         x = "Discrete Values", y = "Probabilities") +
+    labs(title = title_text,
+         x = "Sum of the Variables", y = "Probability") +
     theme_minimal()
 
   return(plot)
@@ -97,7 +99,7 @@ convolution_sequence <- function(disc_vec, disc_prob, seq_len){
 
 x1 <- discrete_vector(1, 6, 6)
 y1 <- prob_vector(x1)
-convolution_sequence(x1, y1, 50)
+convolution_sequence(x1, y1, 10)
 
 x2 <- discrete_vector(1, 6, 6)
 y2 <- prob_vector(x2)

@@ -19,3 +19,4 @@ How do I tell someone to install this?
 # Install necessary packages
 install.packages("dplyr")
 install.packages("ggplot2")
+install.packages("magick")
