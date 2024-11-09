@@ -1,0 +1,21 @@
+---
+title: "Convolution Generator"
+author: "Benjamin Snyder"
+date: "2024-11-09"
+output: pdf_document
+---
+
+# Convolution Generator
+
+This tool is for providing visual aids to help inform students of how the Normal Distribution, and similar distributions that result from the sum of many random variable, arise so frequently in nature. It contains tools for generating gifs of convolutions of density functions, as well as tools for plotting sums of discrete random variables.
+
+## Installation
+
+How do I tell someone to install this?
+
+```r
+
+```
+# Install necessary packages
+install.packages("dplyr")
+install.packages("ggplot2")
