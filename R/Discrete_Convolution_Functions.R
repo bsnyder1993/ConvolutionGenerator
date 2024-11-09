@@ -22,11 +22,17 @@ prob_vector <- function(discrete_vec){
 
 plot_discrete <- function(discrete_vec, prob_vec){
 
+  maximum = max(discrete_vec)
+  minimum = min(discrete_vec)
+  num = ceiling(maximum / 10)
+
+
   upper = 2 * max(prob_vec)
   data <- data.frame(x = discrete_vec, y = prob_vec)
 
   plot <- ggplot(data, aes(x = factor(x), y = y)) +  # Convert x to a factor to ensure discrete x-axis
     geom_bar(stat = "identity", fill = "skyblue", color = "black") +  # Bar plot
+    scale_x_discrete(breaks = seq(minimum, maximum, by = num)) +
     labs(title = "Bar Plot of Discrete Values and Probabilities",
          x = "Discrete Values", y = "Probabilities") +
     theme_minimal()
