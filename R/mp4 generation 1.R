@@ -1,0 +1,126 @@
+
+library(ggplot2)
+library(magick)
+library(av)
+
+unif <- function(x, val, a, b){
+  y <- rep(0, length(x))
+  y <- y + as.numeric(x > a)-as.numeric(x > b)
+  return(list(vec = y, lower = a, upper = b))
+}
+
+convolution <- function(x, y1, y2){
+  area <- sum(pmin(y1, y2))
+  return(area / 500)
+}
+
+plot_files <- character(351*2)
+
+x_vals <- seq(-2, 2, by = 0.002)
+y3 <- rep(0, length(x_vals))
+y1 <- unif(x_vals, 1, -.5, .5)
+
+for(i in 1:351){
+
+  center <- -1.5 + .01 * (i - 1)
+
+
+  y2 <- unif(x_vals, 1, center - .5, center + .5)
+
+
+  if(1 > 3){}
+  else{
+    index <- 5*(i-1) + 1 + 250
+    y3[index] <- convolution(x, y1$vec, y2$vec)
+    if(i > 2){
+      y3[index - 4] = y3[index - 5] + (y3[index] - y3[index - 5])*1/5
+      y3[index - 3] = y3[index - 5] + (y3[index] - y3[index - 5])*2/5
+      y3[index - 2] = y3[index - 5] + (y3[index] - y3[index - 5])*3/5
+      y3[index - 1] = y3[index - 5] + (y3[index] - y3[index - 5])*4/5
+    }
+    data <- data.frame(
+      x = rep(x_vals, 3),
+      y = c(y1$vec, y2$vec, y3),
+      function_type = rep(c("Blah", "Kernel", "Wowwee"), each = length(x_vals))
+    )
+
+    plot <- ggplot(data, aes(x = x, y = y, color = function_type)) +
+      geom_line(size = 1) +
+      labs(title = "Lets go boys", x = "X", y = "Density") +
+      scale_color_manual(values = c("blue", "red", "black")) +  # Set custom colors
+      theme_minimal() +
+      theme(
+        panel.background = element_rect(fill = "white", color = "white"),
+        plot.background = element_rect(fill = "white", color = "white")
+      ) +
+      ylim(0,2)
+  }
+
+  plot_file <- paste0("plot_", i, ".png")
+  ggsave(plot_file, plot = plot, width = 5, height = 4)
+
+  plot_files[i] <- plot_file
+
+}
+
+#framerate <- 25
+
+#av_encode_video(plot_files, output = "conv_vid.mp4", framerate = framerate)
+
+#file.remove(plot_files)
+
+#plot_files <- character(351)
+
+y1$vec <- y3
+
+x_vals <- seq(-2, 2, by = 0.002)
+y3 <- rep(0, length(x_vals))
+
+for(i in 1:351){
+
+  center <- -1.5 + .01 * (i - 1)
+
+  #y1 <- unif(x_vals, 1, -.5, .5)
+  y2 <- unif(x_vals, 1, center - .5, center + .5)
+
+
+  if(1 > 3){}
+  else{
+    index <- 5*(i-1) + 1 + 250
+    y3[index] <- convolution(x, y1$vec, y2$vec)
+    if(i > 2){
+      y3[index - 4] = y3[index - 5] + (y3[index] - y3[index - 5])*1/5
+      y3[index - 3] = y3[index - 5] + (y3[index] - y3[index - 5])*2/5
+      y3[index - 2] = y3[index - 5] + (y3[index] - y3[index - 5])*3/5
+      y3[index - 1] = y3[index - 5] + (y3[index] - y3[index - 5])*4/5
+    }
+    data <- data.frame(
+      x = rep(x_vals, 3),
+      y = c(y1$vec, y2$vec, y3),
+      function_type = rep(c("Blah", "Kernel", "Wowwee"), each = length(x_vals))
+    )
+
+    plot <- ggplot(data, aes(x = x, y = y, color = function_type)) +
+      geom_line(size = 1) +
+      labs(title = "Lets go boys", x = "X", y = "Density") +
+      scale_color_manual(values = c("blue", "red", "black")) +  # Set custom colors
+      theme_minimal() +
+      theme(
+        panel.background = element_rect(fill = "white", color = "white"),
+        plot.background = element_rect(fill = "white", color = "white")
+      ) +
+      ylim(0,2)
+  }
+
+  plot_file <- paste0("plot_", i + 351, ".png")
+  ggsave(plot_file, plot = plot, width = 5, height = 4)
+
+  plot_files[i + 351] <- plot_file
+
+}
+
+framerate <- 25
+
+av_encode_video(plot_files, output = "convolution_vid.mp4", framerate = framerate)
+
+file.remove(plot_files)
