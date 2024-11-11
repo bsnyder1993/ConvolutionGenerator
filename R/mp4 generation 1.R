@@ -14,15 +14,15 @@ convolution <- function(x, y1, y2){
   return(area / 500)
 }
 
-plot_files <- character(351*2)
+plot_files <- character(501*2)
 
 x_vals <- seq(-2, 2, by = 0.002)
 y3 <- rep(0, length(x_vals))
 y1 <- unif(x_vals, 1, -.5, .5)
 
-for(i in 1:351){
+for(i in 1:501){
 
-  center <- -1.5 + .01 * (i - 1)
+  center <- -2.5 + .01 * (i - 1)
 
 
   y2 <- unif(x_vals, 1, center - .5, center + .5)
@@ -30,7 +30,10 @@ for(i in 1:351){
 
   if(1 > 3){}
   else{
-    index <- 5*(i-1) + 1 + 250
+
+    index <- 5*(i-1) + 1 - 250
+    index <- min(index, 2001)
+
     y3[index] <- convolution(x, y1$vec, y2$vec)
     if(i > 2){
       y3[index - 4] = y3[index - 5] + (y3[index] - y3[index - 5])*1/5
@@ -38,6 +41,7 @@ for(i in 1:351){
       y3[index - 2] = y3[index - 5] + (y3[index] - y3[index - 5])*3/5
       y3[index - 1] = y3[index - 5] + (y3[index] - y3[index - 5])*4/5
     }
+
     data <- data.frame(
       x = rep(x_vals, 3),
       y = c(y1$vec, y2$vec, y3),
@@ -76,9 +80,9 @@ y1$vec <- y3
 x_vals <- seq(-2, 2, by = 0.002)
 y3 <- rep(0, length(x_vals))
 
-for(i in 1:351){
+for(i in 1:501){
 
-  center <- -1.5 + .01 * (i - 1)
+  center <- -2.5 + .01 * (i - 1)
 
   #y1 <- unif(x_vals, 1, -.5, .5)
   y2 <- unif(x_vals, 1, center - .5, center + .5)
@@ -86,7 +90,9 @@ for(i in 1:351){
 
   if(1 > 3){}
   else{
-    index <- 5*(i-1) + 1 + 250
+    index <- 5*(i-1) + 1 - 250
+    index <- min(index, 2001)
+
     y3[index] <- convolution(x, y1$vec, y2$vec)
     if(i > 2){
       y3[index - 4] = y3[index - 5] + (y3[index] - y3[index - 5])*1/5
@@ -94,6 +100,7 @@ for(i in 1:351){
       y3[index - 2] = y3[index - 5] + (y3[index] - y3[index - 5])*3/5
       y3[index - 1] = y3[index - 5] + (y3[index] - y3[index - 5])*4/5
     }
+
     data <- data.frame(
       x = rep(x_vals, 3),
       y = c(y1$vec, y2$vec, y3),
@@ -112,14 +119,14 @@ for(i in 1:351){
       ylim(0,2)
   }
 
-  plot_file <- paste0("plot_", i + 351, ".png")
+  plot_file <- paste0("plot_", i + 501, ".png")
   ggsave(plot_file, plot = plot, width = 5, height = 4)
 
-  plot_files[i + 351] <- plot_file
+  plot_files[i + 501] <- plot_file
 
 }
 
-framerate <- 25
+framerate <- 30
 
 av_encode_video(plot_files, output = "convolution_vid.mp4", framerate = framerate)
 
