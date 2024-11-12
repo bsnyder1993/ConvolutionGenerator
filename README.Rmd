@@ -9,14 +9,25 @@ output: pdf_document
 
 This tool is for providing visual aids to help inform students of how the Normal Distribution, and similar distributions that result from the sum of many random variable, arise so frequently in nature. It contains tools for generating GIFs of convolutions of density functions, as well as tools for plotting sums of discrete random variables.
 
+The
+
 ## Installation
 
 How do I tell someone to install this?
 
-```r
-
+```         
 ```
-# Install necessary packages
-install.packages("dplyr")
-install.packages("ggplot2")
+
+#### Install necessary packages
+
+```         
+install.packages("ggplot2") 
 install.packages("magick")
+install.packages("av")
+```
+
+## Remaining Work
+
+The .mp4 generation is currently hard-coded to generate convolutions using a uniform kernel and initial function over a predetermined interval using a fixed step size. I intend to generalize the function to allow the user to determine their own parameters and functions. In the plot frames, I also think it might make the video a bit easier to follow if I eliminate the vertical black line in the convolution function, as well as add a vertical marker to the center of the kernel, to help a less informed viewer better understand how the convolution is being calculated.
+
+In my discrete tools, I need to find an intuitive way to normalize the domain of the convolutions so the distribution doesn't shrink
