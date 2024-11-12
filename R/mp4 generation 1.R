@@ -45,12 +45,12 @@ for(i in 1:501){
     data <- data.frame(
       x = rep(x_vals, 3),
       y = c(y1$vec, y2$vec, y3),
-      function_type = rep(c("Blah", "Kernel", "Wowwee"), each = length(x_vals))
+      function_type = rep(c("Function", "Kernel", "Convolution"), each = length(x_vals))
     )
 
     plot <- ggplot(data, aes(x = x, y = y, color = function_type)) +
       geom_line(size = 1) +
-      labs(title = "Lets go boys", x = "X", y = "Density") +
+      labs(title = "Compund Convolution of Uniform Distributions", x = "X", y = "Density") +
       scale_color_manual(values = c("blue", "red", "black")) +  # Set custom colors
       theme_minimal() +
       theme(
@@ -104,12 +104,12 @@ for(i in 1:501){
     data <- data.frame(
       x = rep(x_vals, 3),
       y = c(y1$vec, y2$vec, y3),
-      function_type = rep(c("Blah", "Kernel", "Wowwee"), each = length(x_vals))
+      function_type = rep(c("Function", "Kernel", "Convolution"), each = length(x_vals))
     )
 
     plot <- ggplot(data, aes(x = x, y = y, color = function_type)) +
       geom_line(size = 1) +
-      labs(title = "Lets go boys", x = "X", y = "Density") +
+      labs(title = "Compund Convolution of Uniform Distributions", x = "X", y = "Density") +
       scale_color_manual(values = c("blue", "red", "black")) +  # Set custom colors
       theme_minimal() +
       theme(
@@ -155,12 +155,12 @@ for(i in 1:501){
     data <- data.frame(
       x = rep(x_vals, 3),
       y = c(y1$vec, y2$vec, y3),
-      function_type = rep(c("Blah", "Kernel", "Wowwee"), each = length(x_vals))
+      function_type = rep(c("Function", "Kernel", "Convolution"), each = length(x_vals))
     )
 
     plot <- ggplot(data, aes(x = x, y = y, color = function_type)) +
       geom_line(size = 1) +
-      labs(title = "Lets go boys", x = "X", y = "Density") +
+      labs(title = "Compund Convolution of Uniform Distributions", x = "X", y = "Density") +
       scale_color_manual(values = c("blue", "red", "black")) +  # Set custom colors
       theme_minimal() +
       theme(
@@ -179,6 +179,6 @@ for(i in 1:501){
 
 framerate <- 30
 
-av_encode_video(plot_files, output = "convolution_vid.mp4", framerate = framerate)
+av_encode_video(plot_files, output = "compound_convolution.mp4", framerate = framerate)
 
 file.remove(plot_files)
