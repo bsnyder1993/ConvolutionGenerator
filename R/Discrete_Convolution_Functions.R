@@ -97,6 +97,7 @@ convolution_sequence <- function(disc_vec, disc_prob, seq_len){
 
 
 
+
 x1 <- discrete_vector(1, 6, 6)
 y1 <- prob_vector(x1)
 convolution_sequence(x1, y1, 10)
