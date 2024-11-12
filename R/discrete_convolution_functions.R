@@ -1,14 +1,6 @@
 
 library(ggplot2)
 
-#' @returns                 # saves a .mp4 file in the
-#' @export
-#'
-#' @examples
-#' # Calling the LRMultiClass function on a 10 x 101 Matrix X, with first column all ones,
-#' # and a vector of class assignments Y
-#'
-
 # Creates a discrete uniform vector on the interval (start, end) with number of values equal to "size"
 discrete_vector <- function(start, end, size){
 

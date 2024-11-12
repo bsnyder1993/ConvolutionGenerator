@@ -1,3 +1,6 @@
+# This file contains the prototype for the PMF plots as well as testing code
+# The relevant code has been properly commented in the discrete_convolution_functions.R file
+
 library(ggplot2)
 
 discrete_vector <- function(start, end, size){

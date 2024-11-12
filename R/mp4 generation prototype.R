@@ -1,3 +1,6 @@
+# This file contains the prototype for the mp4 generation as well as testing code
+# The relevant code has been properly commented in the mp4_generation_functions.R file
+
 
 library(ggplot2)
 library(magick)
@@ -51,7 +54,7 @@ for(i in 1:501){
     plot <- ggplot(data, aes(x = x, y = y, color = function_type)) +
       geom_line(size = 1) +
       labs(title = "Compund Convolution of Uniform Distributions", x = "X", y = "Density") +
-      scale_color_manual(values = c("blue", "red", "black")) +  # Set custom colors
+      scale_color_manual(values = c("black", "blue", "red")) +  # Set custom colors
       theme_minimal() +
       theme(
         panel.background = element_rect(fill = "white", color = "white"),
@@ -110,7 +113,7 @@ for(i in 1:501){
     plot <- ggplot(data, aes(x = x, y = y, color = function_type)) +
       geom_line(size = 1) +
       labs(title = "Compund Convolution of Uniform Distributions", x = "X", y = "Density") +
-      scale_color_manual(values = c("blue", "red", "black")) +  # Set custom colors
+      scale_color_manual(values = c("black", "blue", "red")) +  # Set custom colors
       theme_minimal() +
       theme(
         panel.background = element_rect(fill = "white", color = "white"),
@@ -161,7 +164,7 @@ for(i in 1:501){
     plot <- ggplot(data, aes(x = x, y = y, color = function_type)) +
       geom_line(size = 1) +
       labs(title = "Compund Convolution of Uniform Distributions", x = "X", y = "Density") +
-      scale_color_manual(values = c("blue", "red", "black")) +  # Set custom colors
+      scale_color_manual(values = c("black", "blue", "red")) +  # Set custom colors
       theme_minimal() +
       theme(
         panel.background = element_rect(fill = "white", color = "white"),

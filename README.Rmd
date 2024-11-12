@@ -7,18 +7,15 @@ output: pdf_document
 
 # Convolution Generator
 
-This tool is for providing visual aids to help inform students of how the Normal Distribution, and similar distributions that result from the sum of many random variable, arise so frequently in nature. It contains tools for generating GIFs of convolutions of density functions, as well as tools for plotting sums of discrete random variables.
-
-The
+This package provides tools for creating visual aids to help students develop intuition as to how the Normal Distribution, and similar distributions that arise from the sum of many random variables, comes to form. It contains tools for generating .mp4 videos of convolutions of density functions, as well as tools for plotting sums of discrete random variables.
 
 ## Installation
 
 How do I tell someone to install this?
 
-```         
-```
+#### Installing Necessary Packages
 
-#### Install necessary packages
+This package requires the packages "ggplot2", "magick", and "av" in order to render plots and videos.
 
 ```         
 install.packages("ggplot2") 
@@ -30,4 +27,4 @@ install.packages("av")
 
 The .mp4 generation is currently hard-coded to generate convolutions using a uniform kernel and initial function over a predetermined interval using a fixed step size. I intend to generalize the function to allow the user to determine their own parameters and functions. In the plot frames, I also think it might make the video a bit easier to follow if I eliminate the vertical black line in the convolution function, as well as add a vertical marker to the center of the kernel, to help a less informed viewer better understand how the convolution is being calculated.
 
-In my discrete tools, I need to find an intuitive way to normalize the domain of the convolutions so the distribution doesn't shrink
+In my discrete tools, I need to find an intuitive way to normalize the domain of the convolutions so the distribution doesn't shrink. I also think that providing the outline of a normal to see how the mass function is approximating the normal would
