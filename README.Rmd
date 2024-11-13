@@ -11,7 +11,11 @@ This package provides tools for creating visual aids to help students develop in
 
 ## Installation
 
-How do I tell someone to install this?
+Installing from GitHub:
+
+```         
+devtools::install_github("bsnyder1993/ConvolutionGenerator")
+```
 
 #### Installing Necessary Packages
 
@@ -27,4 +31,6 @@ install.packages("av")
 
 The .mp4 generation is currently hard-coded to generate convolutions using a uniform kernel and initial function over a predetermined interval using a fixed step size. I intend to generalize the function to allow the user to determine their own parameters and functions. In the plot frames, I also think it might make the video a bit easier to follow if I eliminate the vertical black line in the convolution function, as well as add a vertical marker to the center of the kernel, to help a less informed viewer better understand how the convolution is being calculated.
 
-In my discrete tools, I need to find an intuitive way to normalize the domain of the convolutions so the distribution doesn't shrink. I also think that providing the outline of a normal to see how the mass function is approximating the normal would
+In my discrete tools, I need to find an intuitive way to normalize the domain of the convolutions so the distribution doesn't shrink. I also think that providing the outline of a normal to see how the mass function is approximating the normal would make the plots easier to understand.
+
+On top of those adjustments to the code, I also need to include a vignette as per the project instructions.
