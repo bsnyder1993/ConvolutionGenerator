@@ -1,7 +1,5 @@
 # This file contains the prototype for the mp4 generation as well as testing code
 # The relevant code has been properly commented in the mp4_generation_functions.R file
-
-
 library(ggplot2)
 library(magick)
 library(av)
@@ -12,9 +10,9 @@ unif <- function(x, val, a, b){
   return(list(vec = y, lower = a, upper = b))
 }
 
-convolution <- function(x, y1, y2){
+convolution <- function(x, y1, y2, width){
   area <- sum(pmin(y1, y2))
-  return(area / 500)
+  return(area / width)
 }
 
 plot_files <- character(501*3)
