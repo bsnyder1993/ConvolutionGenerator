@@ -1,5 +1,5 @@
 ---
-title: "Vignette"
+title: "Tutorial for Generating .mp4 Files"
 author: "Benjamin Snyder"
 date: "2024-12-07"
 output: pdf_document
@@ -50,9 +50,7 @@ Our output .png files should appear as the following:
 
 ![](images/First_Last.png)
 
-In this case everything appears good. The most likely issues we may observe arise from our choice in domain. If our domain is too large, then too much of the video will be wasted on the kernel approaching the function. If our domain is too small, then the kernel will start on-screen, which can make the video quite jarring and hard to follow.
-
-An example of the latter:
+In this case everything appears good. The most likely issues we may observe arise from our choice in domain. If our domain is too large, then too much of the video will be wasted on the kernel approaching the function. If our domain is too small, then the kernel will start on-screen, which can make the video quite jarring and hard to follow. I will provide an example of the latter:
 
 ```         
 x <- seq(-1.5, 1.5, by = .002)
@@ -63,3 +61,11 @@ last_frame(func, -1.5, 1.5, step_size = .002)
 ```
 
 ![](images/First_Last_Too_Tight.png)
+
+## Generating the .mp4
+
+Once we believe that our input parameters are sufficient, we can generate the mp4. "input_function" dictates the function and kernel, "bound" dictates the radius of the x axis on the plot, and "by" represents the distance between each index in the domain. We will use the same bound and by as we used to generate our domain vector $x$.
+
+The remaining parameters are more readily adjustable. "freq" indicates the number of indices in the function vector skipped between each plot, and increasing this value will reduce the total number of frames generated. "fps" dictates the framerate of the generated .mp4 file, and nIter indicates the number of convolutions to be generated.
+
+The default for nIter is 1, but increasing this value will repeat the initial process of sweeping the kernel across a function, however the function from the previous iteration will be replaced by the computed convolution function. The process is illustrated below:
