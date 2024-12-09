@@ -28,4 +28,5 @@ function <- absolute(x, 1, -1, 1)
 kernel <- ashift(function, 50)
 
 convolution_value <- convolution(function, kernel, length(function))
+
 }

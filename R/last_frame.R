@@ -17,8 +17,6 @@
 #' @import av
 #' @import ggplot2
 #'
-#' @export
-#'
 #' @examples
 #' # Checking the last frame for a uniform distribution on (-.5, 5) with a plot radius of 2.
 #'
@@ -27,7 +25,8 @@
 #' y <- unif(x, -.5, .5)
 #'
 #' last_frame(input_function = y, bound = 2, step_size = .002, freq = 4)
-
+#'
+#' @export
 last_frame <- function(input_function = NULL, bound = 2, step_size = .002, freq = 4){
 
   # Create a and b variables based off of bound

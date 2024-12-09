@@ -8,16 +8,14 @@
 #' @param x         // Domain vector
 #' @param a         // Lower bound scalar
 #' @param b         // Upper bound scalar
-
 #' @returns returns a vector y
-#' @export
 #'
 #' @examples
 #' # Creating a uniform(-.5,.5) vector over the domain (-2, 2)
 #'
 #' x <- seq(-2, 2, by = .002)
 #' y <- unif(x, -.5, .5)
-
+#' @export
 unif <- function(x, a, b){
   y <- rep(0, length(x))
   y <- y + as.numeric(x > a) - as.numeric(x > b)

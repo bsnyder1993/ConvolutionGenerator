@@ -29,4 +29,5 @@ returns a vector y equal to (slope * x + intercept) for a <= x <= b, and zero ot
 
 x <- seq(-3, 3, by = .002)
 y <- linear(x, -.5, -1, 1)
+
 }

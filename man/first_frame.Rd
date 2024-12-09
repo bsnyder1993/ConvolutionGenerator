@@ -28,4 +28,5 @@ x <- seq(-2, 2, by = .002)
 y <- unif(x, -.5, .5)
 
 first_frame(input_function = y, bound = 2, step_size = .002, freq = 4)
+
 }

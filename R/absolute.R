@@ -9,17 +9,14 @@
 #' @param val        // Scalar to determine slope
 #' @param a          // Lower bound scalar
 #' @param b          // Upper bound scalar
-
-
 #' @returns returns a vector y
-#' @export
 #'
 #' @examples
 #' # Creating vector y equal to |x| for -1 <= x <= 1, and zero otherwise over the domain (-3, 3)
 #'
 #' x <- seq(-3, 3, by = .002)
 #' y <- absolute(x, 1, -1, 1)
-
+#' @export
 absolute <- function(x, val, a, b){
   y <- rep(0, length(x))
   y <- y + as.numeric(x > a) - as.numeric(x > b)
