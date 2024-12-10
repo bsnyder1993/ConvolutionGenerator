@@ -11,8 +11,6 @@ Maintainer: Benjamin Snyder <b.snyder@tamu.edu>
 Description: This package provides the tools to create visual aids to help students understand convolutions of distributions.
     Given a function f, the kernel g, and the resulting convolution f * g, the program provides a visual of the kernel sweeping across
     the function f, and illustrating how the new distribution f * g arises.
-    The package also provides tools using discrete plots to allow the user to provide visuals of how the sum of discrete uniform distributions
-    converges to a normal distribution.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
