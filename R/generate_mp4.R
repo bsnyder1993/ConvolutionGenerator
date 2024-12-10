@@ -20,14 +20,14 @@
 #' @import ggplot2
 #'
 #' @examples
-#' # Generating a single loop .mp4 using a uniform distribution on (-.5,.5), with step size equal to 1/500,
+#' # Generating a zero loop .mp4 using a uniform distribution on (-.5,.5), with step size equal to 1/500,
 #' # 4 indices skipped, and a frame rate of 30.
 #'
 #' x <- seq(-2, 2, by = .002)
 #'
 #' y <- unif(x, -.5, .5)
 #'
-#' generate_mp4(input_function = y, bound = 2, step_size = .002, freq = 4, fps = 30, nIter = 1)
+#' generate_mp4(input_function = y, bound = 2, step_size = .002, freq = 4, fps = 30, nIter = 0)
 #' @export
 generate_mp4 <- function(input_function = NULL, bound = 2, step_size = .002, freq = 4, fps = 30, nIter = 1){
 
