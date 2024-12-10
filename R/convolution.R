@@ -13,7 +13,7 @@
 #'
 #' func <- absolute(x, 1, -1, 1)
 #'
-#' convolution_value <- convolution(func, kernel, length(function))
+#' convolution_value <- convolution(func, kernel, length(func))
 #'
 #' @export
 convolution <- function(f, g, width){

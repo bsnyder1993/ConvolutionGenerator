@@ -24,9 +24,8 @@ Convolution
 
 x <- seq(-3, 3, by = .002)
 
-function <- absolute(x, 1, -1, 1)
-kernel <- ashift(function, 50)
+func <- absolute(x, 1, -1, 1)
 
-convolution_value <- convolution(function, kernel, length(function))
+convolution_value <- convolution(func, kernel, length(function))
 
 }
