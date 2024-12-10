@@ -12,6 +12,7 @@
 #' x <- seq(-3, 3, by = .002)
 #'
 #' func <- absolute(x, 1, -1, 1)
+#' kernel <- func
 #'
 #' convolution_value <- convolution(func, kernel, length(func))
 #'
