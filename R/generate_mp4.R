@@ -27,7 +27,7 @@
 #'
 #' y <- unif(x, -.5, .5)
 #'
-#' #generate_mp4(input_function = y, bound = 2, step_size = .002, freq = 4, fps = 30, nIter = 0)
+#' generate_mp4(input_function = y, bound = 2, step_size = .002, freq = 4, fps = 30, nIter = 0)
 #' @export
 generate_mp4 <- function(input_function = NULL, bound = 2, step_size = .002, freq = 4, fps = 30, nIter = 1){
 
