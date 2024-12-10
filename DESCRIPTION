@@ -12,6 +12,11 @@ Description: This package provides the tools to create visual aids to help stude
     Given a function f, the kernel g, and the resulting convolution f * g, the program provides a visual of the kernel sweeping across
     the function f, and illustrating how the new distribution f * g arises.
 License: GPL (>= 3)
+Imports: 
+    ggplot2,
+    av,
+    magic,
+    magick
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
