@@ -19,18 +19,19 @@ devtools::install_github("bsnyder1993/ConvolutionGenerator")
 
 #### Installing Necessary Packages
 
-This package requires the packages "ggplot2", "magick", and "av" in order to render plots and videos.
+This package requires the packages "ggplot2", "magick", "magic", and "av" in order to render plots and videos.
 
 ```         
 install.packages("ggplot2") 
 install.packages("magick")
+install.packages("magic")
 install.packages("av")
 ```
 
-## Remaining Work
+## Overview
 
-The .mp4 generation is currently hard-coded to generate convolutions using a uniform kernel and initial function over a predetermined interval using a fixed step size. I intend to generalize the function to allow the user to determine their own parameters and functions. In the plot frames, I also think it might make the video a bit easier to follow if I eliminate the vertical black line in the convolution function, as well as add a vertical marker to the center of the kernel, to help a less informed viewer better understand how the convolution is being calculated.
+This package contains tools for generating .mp4 visual representations of convolutions. It includes tools for generating distribution functions, and then creating a video of the convolution of said distribution.
 
-In my discrete tools, I need to find an intuitive way to normalize the domain of the convolutions so the distribution doesn't shrink. I also think that providing the outline of a normal to see how the mass function is approximating the normal would make the plots easier to understand.
+The video shows a plot of the input function $f(x)$, a distribution function with mean 0, on the interval $-a<=x<=a$, and then displays $f(x-t)$ as $t$ varies over the domain, as well as $\int f(x) \cdot f(x-t) dt$.
 
-On top of those adjustments to the code, I also need to include a vignette as per the project instructions.
+Explanation on how to use the functions to generate a .mp4 file as well as visual representations of the output can be found in the tutorial vignette.
