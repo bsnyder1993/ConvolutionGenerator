@@ -17,7 +17,7 @@
 #' # Generating y = -.5x + .5 for -1 <= x <= 1 over the domain (-3, 3)
 #'
 #' x <- seq(-3, 3, by = .002)
-#' y <- linear(x, -.5, -1, 1)
+#' y <- linear(x, -.5, .5, -1, 1)
 #'
 #' @export
 linear <- function(x, slope, intercept, a, b){

@@ -33,12 +33,12 @@ determine the number of total plot frames and the frame rate of the .mp4, respec
 and the distance between values over which the input function is calculated.
 }
 \examples{
-# Generating a zero loop .mp4 using a uniform distribution on (-.5,.5), with step size equal to 1/500,
+# Generating a one loop .mp4 using a uniform distribution on (-.5,.5), with step size equal to 1/2,
 # 4 indices skipped, and a frame rate of 30.
 
-x <- seq(-2, 2, by = .002)
+x <- seq(-2, 2, by = .5)
 
 y <- unif(x, -.5, .5)
 
-#generate_mp4(input_function = y, bound = 2, step_size = .002, freq = 4, fps = 30, nIter = 0)
+generate_mp4(input_function = y, bound = 2, step_size = .5, freq = 4, fps = 30, nIter = 1)
 }
